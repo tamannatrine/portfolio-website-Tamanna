@@ -511,7 +511,7 @@ img {
 }
 
 .skills__node {
-  width: 50%;
+  width: 30%;
 }
 
 .skills__python {
@@ -519,11 +519,11 @@ img {
 }
 
 .skills__git {
-  width: 0%;
+  width: 90%;
 }
 
 .skills__github {
-  width: 0%;
+  width: 90%;
 }
 
 .skills__close .skills__list {
