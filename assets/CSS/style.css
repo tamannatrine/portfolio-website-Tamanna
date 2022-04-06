@@ -344,6 +344,12 @@ img {
 }
 
 /* ------Buttons------ */
+button{
+  text-decoration: none;
+  font-family: inherit;
+  border: none;
+  font-size: var(--font-medium);
+}
 .button {
   display: inline-block;
   background-color: var(--first-color);
