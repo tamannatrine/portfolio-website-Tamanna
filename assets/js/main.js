@@ -4,7 +4,7 @@ const navMenu = document.getElementById('nav-menu'),
       navClose = document.getElementById('nav-close');
 
 // ------Menu Show------
-//Valiate if constant exists
+//Validate if constant exists
 if (navToggle) {
     navToggle.addEventListener('click', () => {
         navMenu.classList.add('show-menu');
@@ -12,14 +12,14 @@ if (navToggle) {
 }
 
 // ------Menu Hidden------
-//Valiate if constant exists
+//Validate if constant exists
 if (navClose) {
     navClose.addEventListener('click', () => {
         navMenu.classList.remove('show-menu');
     })
 }
 
-//-------Remove Menu on click------------
+// -------Remove Menu on click------------
 const navLink = document.querySelectorAll('.nav__link')
 
 function linkAction(){
@@ -28,6 +28,60 @@ function linkAction(){
     navMenu.classList.remove('show-menu')
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
+
+// -------------------------------------------
+// -------- Color Theme ---------------------
+// ----------------------------------------------
+
+// -------Show and Remove color theme card------------
+const colorCard = document.getElementById('color_card'),
+      colorToggle = document.getElementById('color-toggle'),
+      colorClose = document.getElementById('color-close');
+
+// ------show Color card------
+//Validate if constant exists
+if (colorToggle) {
+    colorToggle.addEventListener('click', () => {
+        colorCard.style.display = 'block';
+    })
+}
+
+// ------ Hidden Color card------
+//Validate if constant exists
+if (colorClose) {
+    colorClose.addEventListener('click', () => {
+        colorCard.style.display = 'none';
+    })
+}
+
+// --===-- Primary Colors ------------==========---------
+var root = document.querySelector(':root');
+const colorPalette = document.querySelectorAll('.choose_color span');
+
+//remove active class from spans or color selectors
+const removeColorSelector = () => {
+    colorPalette.forEach(color => {
+        color.classList.remove('active');
+    })
+}
+colorPalette.forEach(color => {
+    color.addEventListener('click', () => {
+        removeColorSelector();
+        let primary;
+        color.classList.toggle('active');
+
+        if (color.classList.contains('color-1')) {
+            primaryHue = 215;
+        } else if (color.classList.contains('color-2')) {
+            primaryHue = 128;
+        } else if (color.classList.contains('color-3')) {
+            primaryHue = 370;
+        } 
+
+        root.style.setProperty('--hue-color', primaryHue);
+
+    })
+})
 
 
 //-------Accordion Skills-------------
